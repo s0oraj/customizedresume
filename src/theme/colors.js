@@ -38,7 +38,20 @@ Hello AI! Welcome to this resume color theme system. Here's what you need to kno
 **WRONG** ❌: Both colors being similar shades
 **RIGHT** ✅: One bright/light, one dark - or completely different color families
 
+**🎯 BRAND COLOR COORDINATION RULE:**
+`brandSecondary` should match or be similar to `bgBrandPrimary` for visual cohesion. They can be different colors if the company has multiple brand colors, but both must be darker tones that work on light backgrounds AND both must have high contrast with `bgMain2`.
 
+**EXAMPLES:**
+- Amazon: `brandSecondary` + `bgBrandPrimary` = same orange (both contrast with dark blue banner)
+- Netflix: `brandSecondary` + `bgBrandPrimary` = same red (both contrast with black banner)  
+- Google: `brandSecondary` = green, `bgBrandPrimary` = red (different but both darker than blue banner)
+
+**CONTRAST REQUIREMENTS:**
+- `brandSecondary` must contrast with `bgMain2` (since contact icons appear on banner)
+- `bgBrandPrimary` must contrast with `bgMain2` (banner vs badges contrast rule)
+- Both should be dark enough for light content backgrounds
+
+**FALLBACK:** When in doubt, make `brandSecondary` and `bgBrandPrimary` the same color.
 
 **WHAT NOT TO DO**:
 - Don't modify the base `amazonLightColors` - it's the reference template
@@ -258,7 +271,8 @@ export const amazonLightColors = {
                                       // LOCATIONS: Education.tsx - CGPA badge background  
                                       // NOTE: ⭐⭐⭐⭐ VERY IMPORTANT - This is the bright secondary color that makes elements pop
                                       // IMPORTANCE: This creates the visual hierarchy - what gets user's attention first
-  
+                                      
+
   // === INTERACTIVE ELEMENTS ===
   cardShadow: 'shadow-sm',             // Default card shadow (subtle)
                                       // USED: All content cards for subtle depth
@@ -419,12 +433,57 @@ export const googleLightColors = {
   uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
 };
 
+// Barclays Light Theme - Professional Cyan Blue + Navy Financial Sophistication
+export const barclaysLightColors = {
+  // === HEADER/BANNER SECTION COLORS ===
+  textHeading: 'text-white',           // White text on cyan blue banner for maximum contrast
+  textHeaderSecondary: 'text-gray-100', // Light gray for contact info on cyan background
+  
+  // === MAIN CONTENT AREA COLORS ===
+  textBody: 'text-[#003c71]',          // Deep navy blue for all major headings (professional banking tone)
+  textSecondary: 'text-[#0057a0]',     // Medium blue for skill descriptions and degree info
+  textMuted: 'text-gray-600',          // Standard gray for bullet points and content details
+  textSubtle: 'text-gray-500',         // Light gray for dates and locations
+  buttonTextColor: 'text-white',       // White text on navy badges/buttons for optimal contrast
+  
+  // === BACKGROUND COLOR HIERARCHY ===
+  bgMain2: 'bg-[#00AEEF]',             // Barclays signature cyan blue banner - STRONG CONTRAST with navy badges
+  bgMain: 'bg-[#f8fbff]',              // Very light blue-tinted background for financial professionalism
+  bgCard: 'bg-white',                  // Pure white for content cards
+  bgSubtle: 'bg-gray-50',              // Subtle background for link buttons
+  bgHover: 'bg-gray-100',              // Hover states for interactive elements
+  
+  // === BORDER SYSTEM ===
+  borderPrimary: 'border-[#003c71]',   // Deep navy borders for section underlines
+  borderAccent: 'border-gray-300',     // Light gray for subtle divisions
+  
+  // === BRAND ACCENT COLORS ===
+  brandPrimary: 'text-[#00AEEF]',      // Barclays cyan for section titles and main accents (matches bgMain2)
+  brandSecondary: 'text-[#003c71]',    // Deep navy for contact icons and special highlights (matches bgBrandPrimary)
+  bgBrandPrimary: 'bg-[#003c71]',      // Navy badges (CGPA, SDE Application button) - PROFESSIONAL CONTRAST with cyan banner
+      
+  // === INTERACTIVE ELEMENTS ===
+  cardShadow: 'shadow-sm',             // Subtle card shadows
+  cardShadowHover: 'shadow-md',        // Enhanced hover shadows
+  
+  // === LEGACY UI COMPATIBILITY ===
+  uiTextPrimary: 'text-[#003c71]',     // Primary UI text
+  uiTextSecondary: 'text-[#0057a0]',   // Secondary UI text
+  uiTextTertiary: 'text-gray-600',     // Tertiary UI text
+  uiTextMuted: 'text-gray-500',        // Muted UI text
+  uiBgPrimary: 'bg-white',             // Primary UI background
+  uiBgHover: 'bg-gray-100',            // UI hover background
+  uiBorderAccent: 'border-gray-300',   // UI border color
+  uiBrandPrimary: 'text-[#003c71]',    // UI brand primary
+  uiBrandSecondary: 'text-[#0057a0]',  // UI brand secondary
+  uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
+};
 
 // ===========================================
 // ACTIVE THEME SELECTION
 // ===========================================
 // Switch between company themes here - simply change the variable name
-export const theme = googleLightColors;
+export const theme = barclaysLightColors;
 
 
 
