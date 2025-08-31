@@ -38,7 +38,7 @@ import { theme } from '../../theme/colors';
 
 export function Header() {
 // Centralized logo configuration with automatic padding detection
-  const logoSrc = "/netflix.webp";  // Single source of truth - change this for different companies
+  const logoSrc = "/google.png";  // Single source of truth - change this for different companies
 
   // Auto-detect padding needs from filename
   const hasNoPadding = logoSrc.includes("-nopadding");
