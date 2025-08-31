@@ -61,7 +61,7 @@ export function Header() {
           </h1>
         </div>
         <div className={`${theme.bgBrandPrimary} ${theme.buttonTextColor} px-3 py-1 rounded font-medium text-sm mt-2 md:mt-0`}>
-          SDE Application
+          Software Application Development Apprenticeship, March 2026
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
