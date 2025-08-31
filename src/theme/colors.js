@@ -74,6 +74,48 @@ KEY COLOR CATEGORIES:
 - Background hierarchy (main, cards, subtle, hover)
 */
 
+/*
+=== CRITICAL VARIABLE IMPORTANCE RANKING ===
+🏆 **TIER 1 - MUST HAVE (Core Identity)**
+1. `bgMain2` - Main banner background - Sets entire theme personality
+2. `bgBrandPrimary` - Secondary accent background - Creates visual hierarchy  
+3. `brandPrimary` - Main accent text - Appears everywhere for emphasis
+4. `textBody` - Main heading text - All major titles use this
+
+🥈 **TIER 2 - HIGHLY IMPORTANT (Visual Hierarchy)**  
+5. `brandSecondary` - Secondary accent text - Contact icons, special highlights
+6. `textMuted` - Bullet point text - Most content text uses this
+7. `bgCard` - Content backgrounds - Every section uses this
+8. `textHeading` - Banner text - Header titles
+
+🥉 **TIER 3 - SUPPORTING (Polish & Consistency)**
+9. `borderPrimary` - Section underlines
+10. `bgMain` - Page background
+11. `textHeaderSecondary` - Contact info text
+12. `bgSubtle/bgHover` - Link button states
+
+=== COLOR STRATEGY FOR NEW COMPANIES ===
+
+**MINIMUM VIABLE THEME (2 Colors):**
+- Choose `bgMain2` (dark company color) + `bgBrandPrimary` (bright accent color)
+- These two control the most visual impact
+
+**OPTIMAL THEME (3-4 Colors):**
+- Add `brandSecondary` (for icons/special accents) 
+- Add `textSecondary` (for skill descriptions - could be 3rd company color)
+
+**POTENTIAL 3RD/4TH COLOR USAGE AREAS:**
+- `textSecondary` - Currently skills, could be project technologies
+- `bgSubtle` - Link buttons could use 3rd color for GitHub vs external vs papers
+- `textSubtle` - Rarely used, perfect for optional 4th color
+- `brandSecondary` - Icons and special highlights, ideal for 3rd color
+
+=== COMPANY COLOR EXAMPLES WITH USAGE ===
+- **Google**: bgMain2: Blue (#4285F4), bgBrandPrimary: Red (#EA4335), brandSecondary: Yellow (#FBBC04)
+- **Microsoft**: bgMain2: Blue (#0078D4), bgBrandPrimary: Cyan (#00BCF2), brandSecondary: Gray accent
+- **Netflix**: bgMain2: Black (#141414), bgBrandPrimary: Red (#E50914), brandSecondary: White accent
+- **Apple**: bgMain2: Blue (#007AFF), bgBrandPrimary: Gray (#8E8E93), brandSecondary: Light blue accent
+*/
 
 // ===========================================
 // UTILITY FUNCTIONS FOR THEME GENERATION
@@ -331,54 +373,58 @@ export const netflixLightColors = {
   uiBrandSecondary: 'text-[#564d4d]',  // UI brand secondary
   uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
 };
-/*
-=== CRITICAL VARIABLE IMPORTANCE RANKING ===
-🏆 **TIER 1 - MUST HAVE (Core Identity)**
-1. `bgMain2` - Main banner background - Sets entire theme personality
-2. `bgBrandPrimary` - Secondary accent background - Creates visual hierarchy  
-3. `brandPrimary` - Main accent text - Appears everywhere for emphasis
-4. `textBody` - Main heading text - All major titles use this
+// Google Light Theme - Professional Blue Base + Multi-Color Brand Accents
+export const googleLightColors = {
+  // === HEADER/BANNER SECTION COLORS ===
+  textHeading: 'text-white',           // White text on Google blue banner for maximum contrast
+  textHeaderSecondary: 'text-gray-100', // Light gray for contact info on blue background
+  
+  // === MAIN CONTENT AREA COLORS ===
+  textBody: 'text-[#1a73e8]',          // Google blue for all major headings (company names, project titles)
+  textSecondary: 'text-[#5f6368]',     // Google's secondary gray for skill descriptions and degree info
+  textMuted: 'text-gray-600',          // Standard gray for bullet points and content details
+  textSubtle: 'text-gray-500',         // Light gray for dates and locations
+  buttonTextColor: 'text-white',       // White text on red badges/buttons for optimal contrast
+  
+  // === BACKGROUND COLOR HIERARCHY ===
+  bgMain2: 'bg-[#4285F4]',             // Google signature blue banner - STRONG CONTRAST with red badges
+  bgMain: 'bg-[#fafbff]',              // Very light blue-tinted background
+  bgCard: 'bg-white',                  // Pure white for content cards
+  bgSubtle: 'bg-gray-50',              // Subtle background for link buttons
+  bgHover: 'bg-gray-100',              // Hover states for interactive elements
+  
+  // === BORDER SYSTEM ===
+  borderPrimary: 'border-[#1a73e8]',   // Google blue borders for section underlines
+  borderAccent: 'border-gray-300',     // Light gray for subtle divisions
+  
+  // === BRAND ACCENT COLORS ===
+  brandPrimary: 'text-[#1a73e8]',      // Google blue for section titles and main accents
+  brandSecondary: 'text-[#34A853]',    // Google green for contact icons and special highlights
+  bgBrandPrimary: 'bg-[#EA4335]',      // Google red badges (CGPA, SDE Application button) - DRAMATIC CONTRAST with blue banner
+  
+  // === INTERACTIVE ELEMENTS ===
+  cardShadow: 'shadow-sm',             // Subtle card shadows
+  cardShadowHover: 'shadow-md',        // Enhanced hover shadows
+  
+  // === LEGACY UI COMPATIBILITY ===
+  uiTextPrimary: 'text-[#1a73e8]',     // Primary UI text
+  uiTextSecondary: 'text-[#5f6368]',   // Secondary UI text
+  uiTextTertiary: 'text-gray-600',     // Tertiary UI text
+  uiTextMuted: 'text-gray-500',        // Muted UI text
+  uiBgPrimary: 'bg-white',             // Primary UI background
+  uiBgHover: 'bg-gray-100',            // UI hover background
+  uiBorderAccent: 'border-gray-300',   // UI border color
+  uiBrandPrimary: 'text-[#1a73e8]',    // UI brand primary
+  uiBrandSecondary: 'text-[#5f6368]',  // UI brand secondary
+  uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
+};
 
-🥈 **TIER 2 - HIGHLY IMPORTANT (Visual Hierarchy)**  
-5. `brandSecondary` - Secondary accent text - Contact icons, special highlights
-6. `textMuted` - Bullet point text - Most content text uses this
-7. `bgCard` - Content backgrounds - Every section uses this
-8. `textHeading` - Banner text - Header titles
-
-🥉 **TIER 3 - SUPPORTING (Polish & Consistency)**
-9. `borderPrimary` - Section underlines
-10. `bgMain` - Page background
-11. `textHeaderSecondary` - Contact info text
-12. `bgSubtle/bgHover` - Link button states
-
-=== COLOR STRATEGY FOR NEW COMPANIES ===
-
-**MINIMUM VIABLE THEME (2 Colors):**
-- Choose `bgMain2` (dark company color) + `bgBrandPrimary` (bright accent color)
-- These two control the most visual impact
-
-**OPTIMAL THEME (3-4 Colors):**
-- Add `brandSecondary` (for icons/special accents) 
-- Add `textSecondary` (for skill descriptions - could be 3rd company color)
-
-**POTENTIAL 3RD/4TH COLOR USAGE AREAS:**
-- `textSecondary` - Currently skills, could be project technologies
-- `bgSubtle` - Link buttons could use 3rd color for GitHub vs external vs papers
-- `textSubtle` - Rarely used, perfect for optional 4th color
-- `brandSecondary` - Icons and special highlights, ideal for 3rd color
-
-=== COMPANY COLOR EXAMPLES WITH USAGE ===
-- **Google**: bgMain2: Blue (#4285F4), bgBrandPrimary: Red (#EA4335), brandSecondary: Yellow (#FBBC04)
-- **Microsoft**: bgMain2: Blue (#0078D4), bgBrandPrimary: Cyan (#00BCF2), brandSecondary: Gray accent
-- **Netflix**: bgMain2: Black (#141414), bgBrandPrimary: Red (#E50914), brandSecondary: White accent
-- **Apple**: bgMain2: Blue (#007AFF), bgBrandPrimary: Gray (#8E8E93), brandSecondary: Light blue accent
-*/
 
 // ===========================================
 // ACTIVE THEME SELECTION
 // ===========================================
 // Switch between company themes here - simply change the variable name
-export const theme = netflixLightColors;
+export const theme = googleLightColors;
 
 
 
