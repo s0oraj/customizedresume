@@ -38,7 +38,7 @@ import { theme } from '../../theme/colors';
 
 export function Header() {
 // Centralized logo configuration with automatic padding detection
-  const logoSrc = "/barclays.png";  // Single source of truth - change this for different companies
+  const logoSrc = "/66degrees.png";  // Single source of truth - change this for different companies
 
   // Auto-detect padding needs from filename
   const hasNoPadding = logoSrc.includes("-nopadding");
@@ -61,7 +61,7 @@ export function Header() {
           </h1>
         </div>
         <div className={`${theme.bgBrandPrimary} ${theme.buttonTextColor} px-3 py-1 rounded font-medium text-sm mt-2 md:mt-0`}>
-          SDE Application
+          Data Architect, Azure Application
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">

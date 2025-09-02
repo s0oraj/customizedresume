@@ -130,6 +130,55 @@ KEY COLOR CATEGORIES:
 - **Apple**: bgMain2: Blue (#007AFF), bgBrandPrimary: Gray (#8E8E93), brandSecondary: Light blue accent
 */
 
+
+/*
+=============================================================================
+ADDITIONAL V2 VERSIONS - DARK-BANNER PROFESSIONAL THEME VARIANTS
+=============================================================================
+
+**CRITICAL INDEPENDENCE NOTE**: This V2 section is COMPLETELY SEPARATE from base theme generation. Base themes have TOTAL FREEDOM to use light OR dark banners depending on company flagship colors and AI analysis. Amazon happened to use dark by default (sheer coincidence), but other companies may naturally use light banners as their flagship color. V2 is EXTRA WORK for when users want a guaranteed dark banner option regardless of what the base theme chose.
+
+**CONTEXT**: V2 themes are OPTIONAL alternatives that FORCE dark banners for a more professional/executive appearance. This is ADDITIONAL WORK beyond the standard theme generation.
+
+**NAMING CONVENTION:**
+- Add "V2" suffix to all base theme names
+- Example: amazonLightColors → amazonLightColorsV2
+- Example: americanExpressLightColors → americanExpressLightColorsV2
+
+**V2 GENERATION STRATEGY:**
+1. **bgMain2** = COMPULSORY use the DARKEST company color available from logo/screenshots
+2. **bgBrandPrimary** = COMPULSORY use BRIGHT/CONTRASTING color (must have HIGH CONTRAST with dark bgMain2)
+3. **brandPrimary** = MATCHES bgMain2 (same color, one for text, one for background)
+4. **brandSecondary** = BRIGHT color that contrasts strongly with dark bgMain2 (can match bgBrandPrimary or be different bright color)
+5. **buttonTextColor** = Automatically determined by brightness (bright backgrounds get black text, dark backgrounds get white text)
+
+**WHY V2 EXISTS:**
+- Dark banners = More professional/executive aesthetic regardless of company's natural flagship color
+- Dark bgMain2 makes brandPrimary text darker and "less pale" looking
+- Provides flexibility: original themes follow company's natural color hierarchy, V2 forces dark banner approach
+- Both bgBrandPrimary and brandSecondary must be bright enough to contrast with dark banner
+
+**CONTRAST REQUIREMENTS FOR V2:**
+- bgMain2 = DARKEST available company color (not necessarily flagship)
+- bgBrandPrimary = Bright contrasting color (badges must pop against dark banner)
+- brandSecondary = Bright color (contact icons must be visible on dark banner)
+- Both accent colors can be same or different, but BOTH must contrast strongly with dark bgMain2
+
+**V2 EXAMPLES:**
+- Amazon: bgMain2 = Dark blue (#232F3E), bgBrandPrimary = Bright orange (#FF9900) 
+  **NOTE**: Amazon's base theme HAPPENS TO BE identical to V2 by pure coincidence - Amazon's flagship color is naturally dark
+- Netflix: bgMain2 = Black (#141414), bgBrandPrimary = Bright red (#E50914)
+  **NOTE**: Netflix's base theme HAPPENS TO BE identical to V2 by pure coincidence - Netflix's flagship color is naturally dark
+
+**IMPLEMENTATION NOTES:**
+- Generate V2 only when user specifically wants guaranteed dark banner option and asks "Generate V2 of this"
+- Base themes remain COMPLETELY UNAFFECTED by V2 logic
+- V2 deliberately seeks darkest available color, ignoring company's natural flagship color preference
+- All other theme logic remains identical to base themes
+*/
+
+
+
 // ===========================================
 // UTILITY FUNCTIONS FOR THEME GENERATION
 // ===========================================
@@ -479,11 +528,149 @@ export const barclaysLightColors = {
   uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
 };
 
+// American Express Light Theme - Professional Blue Brand + Navy Financial Sophistication
+export const americanExpressLightColors = {
+  // === HEADER/BANNER SECTION COLORS ===
+  textHeading: 'text-white',           // White text on American Express blue banner for maximum contrast
+  textHeaderSecondary: 'text-gray-100', // Light gray for contact info on blue background
+  
+  // === MAIN CONTENT AREA COLORS ===
+  textBody: 'text-[#1B365D]',          // Deep navy blue for all major headings (professional financial tone)
+  textSecondary: 'text-[#2E77BC]',     // American Express blue for skill descriptions and degree info
+  textMuted: 'text-gray-600',          // Standard gray for bullet points and content details
+  textSubtle: 'text-gray-500',         // Light gray for dates and locations
+  buttonTextColor: 'text-white',       // White text on navy badges/buttons for optimal contrast
+  
+  // === BACKGROUND COLOR HIERARCHY ===
+  bgMain2: 'bg-[#2E77BC]',             // American Express signature blue banner - STRONG CONTRAST with navy badges
+  bgMain: 'bg-[#f8fbff]',              // Very light blue-tinted background for financial professionalism
+  bgCard: 'bg-white',                  // Pure white for content cards
+  bgSubtle: 'bg-gray-50',              // Subtle background for link buttons
+  bgHover: 'bg-gray-100',              // Hover states for interactive elements
+  
+  // === BORDER SYSTEM ===
+  borderPrimary: 'border-[#1B365D]',   // Deep navy borders for section underlines
+  borderAccent: 'border-gray-300',     // Light gray for subtle divisions
+  
+  // === BRAND ACCENT COLORS ===
+  brandPrimary: 'text-[#2E77BC]',      // American Express blue for section titles and main accents
+  brandSecondary: 'text-[#1B365D]',    // Deep navy for contact icons and special highlights
+  bgBrandPrimary: 'bg-[#1B365D]',      // Navy badges (CGPA, SDE Application button) - PROFESSIONAL CONTRAST with blue banner
+  
+  // === INTERACTIVE ELEMENTS ===
+  cardShadow: 'shadow-sm',             // Subtle card shadows
+  cardShadowHover: 'shadow-md',        // Enhanced hover shadows
+  
+  // === LEGACY UI COMPATIBILITY ===
+  uiTextPrimary: 'text-[#1B365D]',     // Primary UI text
+  uiTextSecondary: 'text-[#2E77BC]',   // Secondary UI text
+  uiTextTertiary: 'text-gray-600',     // Tertiary UI text
+  uiTextMuted: 'text-gray-500',        // Muted UI text
+  uiBgPrimary: 'bg-white',             // Primary UI background
+  uiBgHover: 'bg-gray-100',            // UI hover background
+  uiBorderAccent: 'border-gray-300',   // UI border color
+  uiBrandPrimary: 'text-[#2E77BC]',    // UI brand primary
+  uiBrandSecondary: 'text-[#1B365D]',  // UI brand secondary
+  uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
+};
+
+// American Express Light Theme V2 - Professional Dark Navy Banner + Bright Blue Accents
+export const americanExpressLightColorsV2 = {
+ // === HEADER/BANNER SECTION COLORS ===
+ textHeading: 'text-white',           // White text on dark navy banner for maximum contrast
+ textHeaderSecondary: 'text-gray-200', // Light gray for contact info on dark navy background
+ 
+ // === MAIN CONTENT AREA COLORS ===
+ textBody: 'text-[#1B365D]',          // Deep navy blue for all major headings (matches bgMain2 - darker, less pale)
+ textSecondary: 'text-[#2E77BC]',     // American Express blue for skill descriptions and degree info
+ textMuted: 'text-gray-600',          // Standard gray for bullet points and content details
+ textSubtle: 'text-gray-500',         // Light gray for dates and locations
+ buttonTextColor: 'text-white',       // White text on bright blue badges/buttons for optimal contrast
+ 
+ // === BACKGROUND COLOR HIERARCHY ===
+ bgMain2: 'bg-[#1B365D]',             // DARKEST navy banner - Professional executive look with DRAMATIC CONTRAST to bright blue badges
+ bgMain: 'bg-[#f8fbff]',              // Very light blue-tinted background for financial professionalism
+ bgCard: 'bg-white',                  // Pure white for content cards
+ bgSubtle: 'bg-gray-50',              // Subtle background for link buttons
+ bgHover: 'bg-gray-100',              // Hover states for interactive elements
+ 
+ // === BORDER SYSTEM ===
+ borderPrimary: 'border-[#1B365D]',   // Navy borders for section underlines (matches bgMain2)
+ borderAccent: 'border-gray-300',     // Light gray for subtle divisions
+ 
+ // === BRAND ACCENT COLORS ===
+ brandPrimary: 'text-[#1B365D]',      // Navy for section titles and main accents (MATCHES bgMain2)
+ brandSecondary: 'text-[#2E77BC]',    // Bright American Express blue for contact icons (HIGH CONTRAST with dark banner)
+ bgBrandPrimary: 'bg-[#2E77BC]',      // Bright blue badges (CGPA, SDE Application button) - DRAMATIC CONTRAST with dark navy banner
+ 
+ // === INTERACTIVE ELEMENTS ===
+ cardShadow: 'shadow-sm',             // Subtle card shadows
+ cardShadowHover: 'shadow-md',        // Enhanced hover shadows
+ 
+ // === LEGACY UI COMPATIBILITY ===
+ uiTextPrimary: 'text-[#1B365D]',     // Primary UI text
+ uiTextSecondary: 'text-[#2E77BC]',   // Secondary UI text
+ uiTextTertiary: 'text-gray-600',     // Tertiary UI text
+ uiTextMuted: 'text-gray-500',        // Muted UI text
+ uiBgPrimary: 'bg-white',             // Primary UI background
+ uiBgHover: 'bg-gray-100',            // UI hover background
+ uiBorderAccent: 'border-gray-300',   // UI border color
+ uiBrandPrimary: 'text-[#1B365D]',    // UI brand primary
+ uiBrandSecondary: 'text-[#2E77BC]',  // UI brand secondary
+ uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
+};
+
+
+// 66degrees Light Theme - Tech Navy Base + Vibrant Cyan Professional Accents
+export const sixtysixtdegreesLightColors = {
+  // === HEADER/BANNER SECTION COLORS ===
+  textHeading: 'text-white',           // White text on dark navy banner for maximum contrast
+  textHeaderSecondary: 'text-gray-200', // Light gray for contact info on dark navy background
+  
+  // === MAIN CONTENT AREA COLORS ===
+  textBody: 'text-[#1a1f36]',          // Deep navy blue for all major headings (matches banner darkness - professional tech tone)
+  textSecondary: 'text-[#2d3748]',     // Charcoal gray for skill descriptions and degree info
+  textMuted: 'text-gray-600',          // Standard gray for bullet points and content details
+  textSubtle: 'text-gray-500',         // Light gray for dates and locations
+  buttonTextColor: 'text-white',       // White text on cyan badges/buttons for optimal contrast
+  
+  // === BACKGROUND COLOR HIERARCHY ===
+  bgMain2: 'bg-[#1a1f36]',             // 66degrees signature dark navy banner - STRONG CONTRAST with cyan badges
+  bgMain: 'bg-[#f7fafc]',              // Very light blue-gray background for tech professionalism
+  bgCard: 'bg-white',                  // Pure white for content cards
+  bgSubtle: 'bg-gray-50',              // Subtle background for link buttons
+  bgHover: 'bg-gray-100',              // Hover states for interactive elements
+  
+  // === BORDER SYSTEM ===
+  borderPrimary: 'border-[#1a1f36]',   // Navy borders for section underlines (matches banner)
+  borderAccent: 'border-gray-300',     // Light gray for subtle divisions
+  
+  // === BRAND ACCENT COLORS ===
+  brandPrimary: 'text-[#1a1f36]',      // Navy for section titles and main accents (matches banner)
+  brandSecondary: 'text-[#00d4ff]',    // 66degrees vibrant cyan for contact icons and special highlights
+  bgBrandPrimary: 'bg-[#00d4ff]',      // Vibrant cyan badges (CGPA, SDE Application button) - DRAMATIC CONTRAST with navy banner
+  
+  // === INTERACTIVE ELEMENTS ===
+  cardShadow: 'shadow-sm',             // Subtle card shadows
+  cardShadowHover: 'shadow-md',        // Enhanced hover shadows
+  
+  // === LEGACY UI COMPATIBILITY ===
+  uiTextPrimary: 'text-[#1a1f36]',     // Primary UI text
+  uiTextSecondary: 'text-[#2d3748]',   // Secondary UI text
+  uiTextTertiary: 'text-gray-600',     // Tertiary UI text
+  uiTextMuted: 'text-gray-500',        // Muted UI text
+  uiBgPrimary: 'bg-white',             // Primary UI background
+  uiBgHover: 'bg-gray-100',            // UI hover background
+  uiBorderAccent: 'border-gray-300',   // UI border color
+  uiBrandPrimary: 'text-[#1a1f36]',    // UI brand primary
+  uiBrandSecondary: 'text-[#2d3748]',  // UI brand secondary
+  uiBrandTertiary: 'text-gray-600',    // UI brand tertiary
+};
 // ===========================================
 // ACTIVE THEME SELECTION
 // ===========================================
 // Switch between company themes here - simply change the variable name
-export const theme = barclaysLightColors;
+export const theme = sixtysixtdegreesLightColors;
 
 
 
